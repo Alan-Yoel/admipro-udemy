@@ -12,6 +12,14 @@ import { PagesModule } from './pages/pages.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './pages/login/register.component';
 import { LoginComponent } from './pages/login/login.component';
+//servicios
+import { SettingsService } from './services/settings/settings.service';
+
+import { FormsModule } from '@angular/forms';
+
+
+
+
 
 
 @NgModule({
@@ -19,14 +27,18 @@ import { LoginComponent } from './pages/login/login.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
+ 
+  
     
   ],
   imports: [
     BrowserModule,
     APP_ROUTES,
     PagesModule,
+    FormsModule
+    
   ],
-  providers: [],
+  providers: [SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
