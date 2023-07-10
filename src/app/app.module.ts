@@ -1,26 +1,25 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-//Rutas
+// Rutas
 import { APP_ROUTES } from './app.routes';
 
-
-//Modulos
+// Modulos
 import { PagesModule } from './pages/pages.module';
 
-//Componentes
-import { AppComponent } from './app.component';
-import { RegisterComponent } from './pages/login/register.component';
-import { LoginComponent } from './pages/login/login.component';
-//servicios
-import { SettingsService } from './services/settings/settings.service';
-
+// temporal
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UsuarioService } from './services/service.index';
-import { HttpClientModule } from '@angular/common/http';
+
+// Servicios
+import { ServiceModule } from './services/service.module';
 
 
 
+
+// Componentes
+import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './login/register.component';
 
 
 
@@ -28,10 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
- 
-  
-    
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -39,11 +35,9 @@ import { HttpClientModule } from '@angular/common/http';
     PagesModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    
-    
+    ServiceModule
   ],
-  providers: [SettingsService, UsuarioService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

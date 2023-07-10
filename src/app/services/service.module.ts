@@ -1,23 +1,30 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import {
   SettingsService,
-  SharedService,
   SidebarService,
+  SharedService,
   UsuarioService,
-  loginGuardGuard,
-} from './service.index';
-import { HttpClientModule } from '@angular/common/http';
+  LoginGuardGuard,
+  SubirArchivoService
+ } from './service.index';
+
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    HttpClientModule
+  ],
   providers: [
     SettingsService,
     SidebarService,
     SharedService,
     UsuarioService,
-    { provide: 'CanActivateFn', useValue: loginGuardGuard },
+    LoginGuardGuard,
+    SubirArchivoService
   ],
+  declarations: []
 })
-export class ServiceModule {}
+export class ServiceModule { }

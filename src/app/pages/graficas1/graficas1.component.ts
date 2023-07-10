@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartData, ChartType } from 'chart.js';
 
 @Component({
   selector: 'app-graficas1',
@@ -42,11 +41,3 @@ export class Graficas1Component implements OnInit {
   }
 
 }
-
-
-  
-
-
-
-
-

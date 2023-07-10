@@ -1,27 +1,26 @@
-import { NgModule } from '@angular/core';
-import { CanActivate, Router, RouterModule } from '@angular/router';
-import { UsuarioService } from '../service.index';
+import { Injectable } from '@angular/core';
+import { CanActivate, Router } from '@angular/router';
 
+import { UsuarioService } from '../usuario/usuario.service';
 
-export class loginGuardGuard implements CanActivate {
+@Injectable()
+export class LoginGuardGuard implements CanActivate {
+
   constructor(
-                public _usuarioService: UsuarioService,
-                public router: Router ){}
-  canActivate(): any {
+    public _usuarioService: UsuarioService,
+    public router: Router
+  ) {}
 
-    if(this._usuarioService.estaLogueado()){
-      console.log('PASO EL GUARD')
+  canActivate() {
+
+    if ( this._usuarioService.estaLogueado() ) {
+      console.log( 'PASO EL GUARD');
       return true;
-    }else{
-      console.log('Bloqueado por el guard')
+    } else {
+      console.log( 'Bloqueado por guard' );
+      this.router.navigate(['/login']);
       return false;
     }
 
-
-    return true;
   }
 }
-// O implementa tu lógica de verificación de acceso aquí
-
-@NgModule({})
-export class ServiceModule {}
