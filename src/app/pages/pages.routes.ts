@@ -6,6 +6,7 @@ import { ProgressComponent } from "./progress/progress.component";
 import { AccoutSettingsComponent } from "./accout-settings/accout-settings.component";
 import { PromesasComponent } from "./promesas/promesas.component";
 import RxjsComponent from "./rxjs/rxjs.component";
+import { loginGuardGuard } from "../services/service.index";
 
 
 
@@ -13,6 +14,7 @@ const pagesRoutes: Routes=[
     {
         path: '', 
         component: PagesComponent,
+        canActivate:[loginGuardGuard],
         children:[
             {path: 'dashboard', component: DashboardComponent, data: {titulo: "Dashboard"}},
             {path: 'progress', component: ProgressComponent, data: {titulo: "Progress"}},

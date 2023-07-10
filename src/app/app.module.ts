@@ -15,7 +15,9 @@ import { LoginComponent } from './pages/login/login.component';
 //servicios
 import { SettingsService } from './services/settings/settings.service';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UsuarioService } from './services/service.index';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -35,10 +37,13 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     APP_ROUTES,
     PagesModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    
     
   ],
-  providers: [SettingsService],
+  providers: [SettingsService, UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
